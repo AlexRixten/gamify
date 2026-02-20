@@ -1,38 +1,20 @@
-import type { StorybookConfig } from '@storybook/react-webpack5';
+import type { StorybookConfig } from '@storybook/react-native-web-vite';
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
-  addons: [],
+  addons: ['@storybook/addon-essentials'],
   framework: {
-    name: '@storybook/react-webpack5',
+    name: '@storybook/react-native-web-vite',
     options: {},
   },
-  webpackFinal: async (webpackConfig) => {
-    // Add TypeScript loader
-    webpackConfig.module?.rules?.push({
-      test: /\.(ts|tsx)$/,
-      use: [
-        {
-          loader: 'ts-loader',
-          options: {
-            transpileOnly: true,
-          },
+  options: {
+    builder: {
+      resolve: {
+        alias: {
+          'react-native-reanimated': 'react-native-reanimated/lib/module/index',
         },
-      ],
-    });
-
-    // Resolve react-native to react-native-web
-    webpackConfig.resolve = webpackConfig.resolve || {};
-    webpackConfig.resolve.alias = {
-      ...webpackConfig.resolve.alias,
-      'react-native$': 'react-native-web',
-    };
-
-    // Add .tsx and .ts extensions
-    webpackConfig.resolve.extensions = webpackConfig.resolve.extensions || [];
-    webpackConfig.resolve.extensions.push('.tsx', '.ts');
-
-    return webpackConfig;
+      },
+    },
   },
 };
 
