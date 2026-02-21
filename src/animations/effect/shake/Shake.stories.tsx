@@ -58,7 +58,6 @@ const styles = StyleSheet.create({
   },
 });
 
-// Interactive story with button
 const ShakeWithButton = (args: React.ComponentProps<typeof Shake>) => {
   const [trigger, setTrigger] = useState(false);
 
@@ -71,17 +70,13 @@ const ShakeWithButton = (args: React.ComponentProps<typeof Shake>) => {
       >
         <DemoChild />
       </Shake>
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => setTrigger(true)}
-      >
+      <TouchableOpacity style={styles.button} onPress={() => setTrigger(true)}>
         <Text style={styles.buttonText}>Shake!</Text>
       </TouchableOpacity>
     </View>
   );
 };
 
-// Story using useShake hook
 const ShakeWithHook = () => {
   const { shake, ShakeWrapper } = useShake();
 

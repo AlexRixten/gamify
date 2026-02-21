@@ -37,7 +37,6 @@ export function Shake({
     }
   }, [trigger, intensity, duration]);
 
-  // Call onAnimationEnd after animation completes
   useEffect(() => {
     if (trigger) {
       const timer = setTimeout(() => {
@@ -60,7 +59,6 @@ export function Shake({
   );
 }
 
-// Hook for shake animation
 export function useShake() {
   const [shakeKey, setShakeKey] = useState(0);
 

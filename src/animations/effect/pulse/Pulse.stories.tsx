@@ -58,7 +58,6 @@ const styles = StyleSheet.create({
   },
 });
 
-// Interactive story with toggle button
 const PulseWithButton = (args: React.ComponentProps<typeof Pulse>) => {
   const [disabled, setDisabled] = useState(true);
 
@@ -71,15 +70,12 @@ const PulseWithButton = (args: React.ComponentProps<typeof Pulse>) => {
         style={styles.button}
         onPress={() => setDisabled((d) => !d)}
       >
-        <Text style={styles.buttonText}>
-          {disabled ? 'Start' : 'Stop'}
-        </Text>
+        <Text style={styles.buttonText}>{disabled ? 'Start' : 'Stop'}</Text>
       </TouchableOpacity>
     </View>
   );
 };
 
-// Story using usePulse hook
 const PulseWithHook = () => {
   const { disabled, toggle, PulseWrapper } = usePulse(true);
 

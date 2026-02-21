@@ -92,7 +92,6 @@ export function Flip({
   );
 }
 
-// Internal wrapper component
 interface FlipWrapperProps {
   flipped: boolean;
   front: React.ReactNode;
@@ -135,7 +134,6 @@ export function useFlip(initialFlipped = false) {
     flipToFront,
     flipToBack,
     setFlipped,
-    // Stable component reference
     FlipWrapper: FlipWrapperImpl,
   };
 }
