@@ -8466,7 +8466,10 @@ __metadata:
     react-native-builder-bob: "npm:^0.40.18"
     react-native-gamify-ui: "workspace:*"
     react-native-monorepo-config: "npm:^0.3.3"
+    react-native-reanimated: "npm:^4.2.2"
+    react-native-vector-icons: "npm:^10.3.0"
     react-native-web: "npm:~0.21.0"
+    react-native-worklets: "npm:^0.7.4"
   languageName: unknown
   linkType: soft
 
