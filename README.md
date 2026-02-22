@@ -4,14 +4,11 @@ Gamification
 
 ## Installation
 
-
 ```sh
 npm install gamify
 ```
 
-
 ## Usage
-
 
 ```js
 import { multiply } from 'gamify';
@@ -20,7 +17,6 @@ import { multiply } from 'gamify';
 
 const result = await multiply(3, 7);
 ```
-
 
 ## Contributing
 
