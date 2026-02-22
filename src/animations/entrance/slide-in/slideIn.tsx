@@ -40,9 +40,18 @@ export function SlideIn({
 
   useDerivedValue(() => {
     if (visible) {
-      translateX.value = withTiming(0, { duration, easing: Easing.out(Easing.ease) });
-      translateY.value = withTiming(0, { duration, easing: Easing.out(Easing.ease) });
-      opacity.value = withTiming(1, { duration, easing: Easing.out(Easing.ease) });
+      translateX.value = withTiming(0, {
+        duration,
+        easing: Easing.out(Easing.ease),
+      });
+      translateY.value = withTiming(0, {
+        duration,
+        easing: Easing.out(Easing.ease),
+      });
+      opacity.value = withTiming(1, {
+        duration,
+        easing: Easing.out(Easing.ease),
+      });
     } else {
       const initial = getInitialOffset(direction, distance);
       translateX.value = initial.x;
@@ -90,10 +99,7 @@ export function useSlideIn(initialVisible = false) {
     hide,
     toggle,
     setVisible,
-    SlideInWrapper: ({
-      children,
-      ...props
-    }: Omit<SlideInProps, 'visible'>) => (
+    SlideInWrapper: ({ children, ...props }: Omit<SlideInProps, 'visible'>) => (
       <SlideIn visible={visible} {...props}>
         {children}
       </SlideIn>

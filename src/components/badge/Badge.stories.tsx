@@ -43,7 +43,11 @@ const FlippableBadge = (args: React.ComponentProps<typeof Badge>) => {
   const [flipped, setFlipped] = useState(false);
   return (
     <View style={{ alignItems: 'center' }}>
-      <Badge {...args} flipped={flipped} onFlipEnd={() => console.log('Flipped!')} />
+      <Badge
+        {...args}
+        flipped={flipped}
+        onFlipEnd={() => console.log('Flipped!')}
+      />
       <TouchableOpacity
         style={styles.button}
         onPress={() => setFlipped((f) => !f)}

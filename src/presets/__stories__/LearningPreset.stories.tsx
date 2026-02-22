@@ -4,7 +4,11 @@ import { learningPreset } from '../learning';
 import { AchievementCard } from '../../components/achievement-card';
 import { LevelBadge } from '../../components/level-badge';
 import { Badge } from '../../components/badge';
-import type { Badge as BadgeType, Achievement, AchievementStatus } from '../../core/types';
+import type {
+  Badge as BadgeType,
+  Achievement,
+  AchievementStatus,
+} from '../../core/types';
 
 const meta: Meta = {
   title: 'Presets/Learning',
@@ -55,7 +59,11 @@ const styles = StyleSheet.create({
   },
 });
 
-function achievementToCardProps(achievement: Achievement, isUnlocked: boolean, progress?: number) {
+function achievementToCardProps(
+  achievement: Achievement,
+  isUnlocked: boolean,
+  progress?: number
+) {
   const status: AchievementStatus = isUnlocked ? 'unlocked' : 'locked';
   return {
     title: achievement.name,
@@ -89,7 +97,9 @@ export const Overview: StoryObj = {
   render: () => (
     <View>
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Levels ({learningPreset.levels.length})</Text>
+        <Text style={styles.sectionTitle}>
+          Levels ({learningPreset.levels.length})
+        </Text>
         <View style={styles.levelsContainer}>
           {learningPreset.levels.map((level, index) => (
             <View key={level.id} style={styles.levelItem}>
@@ -102,10 +112,16 @@ export const Overview: StoryObj = {
       </View>
 
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Badges ({learningPreset.badges?.length || 0})</Text>
+        <Text style={styles.sectionTitle}>
+          Badges ({learningPreset.badges?.length || 0})
+        </Text>
         <View style={styles.badgesGrid}>
           {learningPreset.badges?.map((badge) => (
-            <Badge key={badge.id} {...badgeToBadgeProps(badge, true)} size="md" />
+            <Badge
+              key={badge.id}
+              {...badgeToBadgeProps(badge, true)}
+              size="md"
+            />
           ))}
         </View>
       </View>
@@ -116,7 +132,9 @@ export const Overview: StoryObj = {
 export const Levels: StoryObj = {
   render: () => (
     <View style={styles.section}>
-      <Text style={styles.sectionTitle}>Levels ({learningPreset.levels.length})</Text>
+      <Text style={styles.sectionTitle}>
+        Levels ({learningPreset.levels.length})
+      </Text>
       <View style={styles.levelsContainer}>
         {learningPreset.levels.map((level, index) => (
           <View key={level.id} style={styles.levelItem}>
@@ -132,13 +150,21 @@ export const Levels: StoryObj = {
 
 export const Achievements: StoryObj = {
   render: () => {
-    const categories = [...new Set(learningPreset.achievements?.map((a) => a.category))];
+    const categories = [
+      ...new Set(learningPreset.achievements?.map((a) => a.category)),
+    ];
     return (
       <View>
         {categories.map((category) => (
           <View key={category} style={styles.section}>
             <Text style={styles.sectionTitle}>
-              {category.charAt(0).toUpperCase() + category.slice(1)} ({learningPreset.achievements?.filter((a) => a.category === category).length})
+              {category.charAt(0).toUpperCase() + category.slice(1)} (
+              {
+                learningPreset.achievements?.filter(
+                  (a) => a.category === category
+                ).length
+              }
+              )
             </Text>
             {learningPreset.achievements
               ?.filter((a) => a.category === category)
@@ -162,17 +188,24 @@ export const Badges: StoryObj = {
       common: learningPreset.badges?.filter((b) => b.rarity === 'common') || [],
       rare: learningPreset.badges?.filter((b) => b.rarity === 'rare') || [],
       epic: learningPreset.badges?.filter((b) => b.rarity === 'epic') || [],
-      legendary: learningPreset.badges?.filter((b) => b.rarity === 'legendary') || [],
+      legendary:
+        learningPreset.badges?.filter((b) => b.rarity === 'legendary') || [],
     };
 
     return (
       <View>
         {badgesByRarity.common.length > 0 && (
           <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Common ({badgesByRarity.common.length})</Text>
+            <Text style={styles.sectionTitle}>
+              Common ({badgesByRarity.common.length})
+            </Text>
             <View style={styles.badgesGrid}>
               {badgesByRarity.common.map((badge) => (
-                <Badge key={badge.id} {...badgeToBadgeProps(badge, true)} size="sm" />
+                <Badge
+                  key={badge.id}
+                  {...badgeToBadgeProps(badge, true)}
+                  size="sm"
+                />
               ))}
             </View>
           </View>
@@ -180,10 +213,16 @@ export const Badges: StoryObj = {
 
         {badgesByRarity.rare.length > 0 && (
           <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Rare ({badgesByRarity.rare.length})</Text>
+            <Text style={styles.sectionTitle}>
+              Rare ({badgesByRarity.rare.length})
+            </Text>
             <View style={styles.badgesGrid}>
               {badgesByRarity.rare.map((badge) => (
-                <Badge key={badge.id} {...badgeToBadgeProps(badge, true)} size="md" />
+                <Badge
+                  key={badge.id}
+                  {...badgeToBadgeProps(badge, true)}
+                  size="md"
+                />
               ))}
             </View>
           </View>
@@ -191,10 +230,16 @@ export const Badges: StoryObj = {
 
         {badgesByRarity.epic.length > 0 && (
           <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Epic ({badgesByRarity.epic.length})</Text>
+            <Text style={styles.sectionTitle}>
+              Epic ({badgesByRarity.epic.length})
+            </Text>
             <View style={styles.badgesGrid}>
               {badgesByRarity.epic.map((badge) => (
-                <Badge key={badge.id} {...badgeToBadgeProps(badge, true)} size="lg" />
+                <Badge
+                  key={badge.id}
+                  {...badgeToBadgeProps(badge, true)}
+                  size="lg"
+                />
               ))}
             </View>
           </View>
@@ -202,10 +247,16 @@ export const Badges: StoryObj = {
 
         {badgesByRarity.legendary.length > 0 && (
           <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Legendary ({badgesByRarity.legendary.length})</Text>
+            <Text style={styles.sectionTitle}>
+              Legendary ({badgesByRarity.legendary.length})
+            </Text>
             <View style={styles.badgesGrid}>
               {badgesByRarity.legendary.map((badge) => (
-                <Badge key={badge.id} {...badgeToBadgeProps(badge, true)} size="xl" />
+                <Badge
+                  key={badge.id}
+                  {...badgeToBadgeProps(badge, true)}
+                  size="xl"
+                />
               ))}
             </View>
           </View>

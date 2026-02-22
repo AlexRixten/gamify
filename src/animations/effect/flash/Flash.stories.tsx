@@ -45,7 +45,11 @@ const FlashWithButton = (args: React.ComponentProps<typeof Flash>) => {
   const [trigger, setTrigger] = useState(false);
   return (
     <View style={{ alignItems: 'center' }}>
-      <Flash {...args} trigger={trigger} onAnimationEnd={() => setTrigger(false)}>
+      <Flash
+        {...args}
+        trigger={trigger}
+        onAnimationEnd={() => setTrigger(false)}
+      >
         <DemoChild />
       </Flash>
       <TouchableOpacity style={styles.button} onPress={() => setTrigger(true)}>

@@ -45,7 +45,7 @@ function AnimatedBadgeItem({
       );
       opacity.value = withDelay(delay, withTiming(1, { duration: 200 }));
     }
-  }, [animated, index, staggerDelay]);
+  }, [animated, index, opacity, scale, staggerDelay]);
 
   const animatedStyle = useAnimatedStyle(
     () => ({

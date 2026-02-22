@@ -60,7 +60,11 @@ const BounceWithButton = (args: React.ComponentProps<typeof Bounce>) => {
 
   return (
     <View style={{ alignItems: 'center' }}>
-      <Bounce {...args} trigger={trigger} onAnimationEnd={() => setTrigger(false)}>
+      <Bounce
+        {...args}
+        trigger={trigger}
+        onAnimationEnd={() => setTrigger(false)}
+      >
         <DemoChild />
       </Bounce>
       <TouchableOpacity style={styles.button} onPress={() => setTrigger(true)}>

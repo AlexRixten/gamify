@@ -66,7 +66,10 @@ const FadeInWithButton = (args: React.ComponentProps<typeof FadeIn>) => {
       <FadeIn {...args} visible={visible}>
         <DemoChild />
       </FadeIn>
-      <TouchableOpacity style={styles.button} onPress={() => setVisible((v) => !v)}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => setVisible((v) => !v)}
+      >
         <Text style={styles.buttonText}>{visible ? 'Hide' : 'Show'}</Text>
       </TouchableOpacity>
     </View>
@@ -82,7 +85,9 @@ const FadeInWithHook = () => {
         <DemoChild />
       </FadeInWrapper>
       <TouchableOpacity style={styles.button} onPress={toggle}>
-        <Text style={styles.buttonText}>{visible ? 'Hide' : 'Show'} (Hook)</Text>
+        <Text style={styles.buttonText}>
+          {visible ? 'Hide' : 'Show'} (Hook)
+        </Text>
       </TouchableOpacity>
     </View>
   );

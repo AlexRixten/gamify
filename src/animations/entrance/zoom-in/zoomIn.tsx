@@ -21,7 +21,10 @@ export function ZoomIn({
 
   useDerivedValue(() => {
     if (visible) {
-      scale.value = withTiming(1, { duration, easing: Easing.out(Easing.back(1.5)) });
+      scale.value = withTiming(1, {
+        duration,
+        easing: Easing.out(Easing.back(1.5)),
+      });
       opacity.value = withTiming(1, { duration: duration * 0.6 });
     } else {
       scale.value = withTiming(0, { duration: duration * 0.5 });

@@ -30,10 +30,13 @@ function AnimatedLeaderboardItem({
     opacity.value = withDelay(delay, withSpring(1));
   }, []);
 
-  const animatedStyle = useAnimatedStyle(() => ({
-    transform: [{ translateY: translateY.value }],
-    opacity: opacity.value,
-  }), []);
+  const animatedStyle = useAnimatedStyle(
+    () => ({
+      transform: [{ translateY: translateY.value }],
+      opacity: opacity.value,
+    }),
+    []
+  );
 
   return (
     <AnimatedView style={animatedStyle}>
@@ -61,7 +64,9 @@ export function LeaderboardCard({
   onEntryPress,
 }: LeaderboardCardProps) {
   const displayEntries = entries.slice(0, maxEntries);
-  const currentUserEntry = entries.find((e) => e.id === currentUserId || e.isCurrentUser);
+  const currentUserEntry = entries.find(
+    (e) => e.id === currentUserId || e.isCurrentUser
+  );
 
   return (
     <View style={[styles.card, style]}>
@@ -90,7 +95,9 @@ export function LeaderboardCard({
       </View>
 
       {currentUserEntry && !displayEntries.includes(currentUserEntry) && (
-        <View style={{ padding: 8, borderTopWidth: 1, borderTopColor: '#f0f0f0' }}>
+        <View
+          style={{ padding: 8, borderTopWidth: 1, borderTopColor: '#f0f0f0' }}
+        >
           <LeaderboardItem
             rank={currentUserEntry.rank}
             name={currentUserEntry.name}

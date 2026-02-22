@@ -102,7 +102,9 @@ export const FitnessProfile: StoryObj = {
           <View style={styles.statsRow}>
             {stats.map((stat) => (
               <View key={stat.label} style={styles.statItem}>
-                <Text style={[styles.statValue, { color: '#FF5722' }]}>{stat.value}</Text>
+                <Text style={[styles.statValue, { color: '#FF5722' }]}>
+                  {stat.value}
+                </Text>
                 <Text style={styles.statLabel}>{stat.label}</Text>
               </View>
             ))}
@@ -166,7 +168,9 @@ export const LearningProfile: StoryObj = {
           <View style={styles.statsRow}>
             {stats.map((stat) => (
               <View key={stat.label} style={styles.statItem}>
-                <Text style={[styles.statValue, { color: '#6366f1' }]}>{stat.value}</Text>
+                <Text style={[styles.statValue, { color: '#6366f1' }]}>
+                  {stat.value}
+                </Text>
                 <Text style={styles.statLabel}>{stat.label}</Text>
               </View>
             ))}
@@ -215,7 +219,15 @@ export const EcommerceProfile: StoryObj = {
       { id: '1', rank: 1, name: 'Shopaholic', avatarEmoji: '🛍️', score: 15000 },
       { id: '2', rank: 2, name: 'VIP Buyer', avatarEmoji: '💎', score: 12500 },
       { id: '3', rank: 3, name: 'Regular', avatarEmoji: '⭐', score: 10000 },
-      { id: '4', rank: 4, name: 'You', avatarEmoji: '🎮', score: 8500, isCurrentUser: true, rankChange: 'up' as const },
+      {
+        id: '4',
+        rank: 4,
+        name: 'You',
+        avatarEmoji: '🎮',
+        score: 8500,
+        isCurrentUser: true,
+        rankChange: 'up' as const,
+      },
     ];
 
     return (
@@ -236,7 +248,9 @@ export const EcommerceProfile: StoryObj = {
           <View style={styles.statsRow}>
             {stats.map((stat) => (
               <View key={stat.label} style={styles.statItem}>
-                <Text style={[styles.statValue, { color: '#FFD700' }]}>{stat.value}</Text>
+                <Text style={[styles.statValue, { color: '#FFD700' }]}>
+                  {stat.value}
+                </Text>
                 <Text style={styles.statLabel}>{stat.label}</Text>
               </View>
             ))}
@@ -282,16 +296,57 @@ export const EcommerceProfile: StoryObj = {
 export const LeaderboardExample: StoryObj = {
   render: () => {
     const entries = [
-      { id: '1', rank: 1, name: 'Top Player', avatarEmoji: '🏆', score: 99999, level: 99 },
-      { id: '2', rank: 2, name: 'Second Best', avatarEmoji: '🥈', score: 88888, level: 85 },
-      { id: '3', rank: 3, name: 'Third Place', avatarEmoji: '🥉', score: 77777, level: 72 },
-      { id: '4', rank: 4, name: 'Fourth', avatarEmoji: '😎', score: 66666, level: 60 },
-      { id: '5', rank: 5, name: 'You', avatarEmoji: '🎮', score: 55555, level: 45, isCurrentUser: true, rankChange: 'up' as const },
+      {
+        id: '1',
+        rank: 1,
+        name: 'Top Player',
+        avatarEmoji: '🏆',
+        score: 99999,
+        level: 99,
+      },
+      {
+        id: '2',
+        rank: 2,
+        name: 'Second Best',
+        avatarEmoji: '🥈',
+        score: 88888,
+        level: 85,
+      },
+      {
+        id: '3',
+        rank: 3,
+        name: 'Third Place',
+        avatarEmoji: '🥉',
+        score: 77777,
+        level: 72,
+      },
+      {
+        id: '4',
+        rank: 4,
+        name: 'Fourth',
+        avatarEmoji: '😎',
+        score: 66666,
+        level: 60,
+      },
+      {
+        id: '5',
+        rank: 5,
+        name: 'You',
+        avatarEmoji: '🎮',
+        score: 55555,
+        level: 45,
+        isCurrentUser: true,
+        rankChange: 'up' as const,
+      },
     ];
 
     return (
       <View style={styles.container}>
-        <LeaderboardCard entries={entries} currentUserId="5" title="Global Rankings" />
+        <LeaderboardCard
+          entries={entries}
+          currentUserId="5"
+          title="Global Rankings"
+        />
       </View>
     );
   },
@@ -321,7 +376,9 @@ export const FullDashboard: StoryObj = {
           <View style={styles.statsRow}>
             {stats.map((stat) => (
               <View key={stat.label} style={styles.statItem}>
-                <Text style={[styles.statValue, { color: '#FF5722' }]}>{stat.value}</Text>
+                <Text style={[styles.statValue, { color: '#FF5722' }]}>
+                  {stat.value}
+                </Text>
                 <Text style={styles.statLabel}>{stat.label}</Text>
               </View>
             ))}

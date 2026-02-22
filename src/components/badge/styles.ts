@@ -13,9 +13,17 @@ export const sizes = {
 };
 
 export const variants = {
-  default: { bg: '#6366f1', border: '#4f46e5', glow: 'rgba(99, 102, 241, 0.5)' },
+  default: {
+    bg: '#6366f1',
+    border: '#4f46e5',
+    glow: 'rgba(99, 102, 241, 0.5)',
+  },
   gold: { bg: '#fbbf24', border: '#d97706', glow: 'rgba(251, 191, 36, 0.5)' },
-  silver: { bg: '#9ca3af', border: '#6b7280', glow: 'rgba(156, 163, 175, 0.5)' },
+  silver: {
+    bg: '#9ca3af',
+    border: '#6b7280',
+    glow: 'rgba(156, 163, 175, 0.5)',
+  },
   bronze: { bg: '#d97706', border: '#b45309', glow: 'rgba(217, 119, 6, 0.5)' },
   locked: { bg: '#e5e7eb', border: '#d1d5db', glow: 'transparent' },
 };
