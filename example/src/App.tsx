@@ -1,5 +1,5 @@
 import { Text, View, StyleSheet } from 'react-native';
-import { Badge, ProgressBar, LevelBadge } from 'gamify';
+import { Badge, ProgressBar, LevelBadge } from 'react-native-gamify-ui';
 
 export default function App() {
   return (

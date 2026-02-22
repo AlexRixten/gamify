@@ -8464,6 +8464,7 @@ __metadata:
     react-dom: "npm:19.1.0"
     react-native: "npm:0.81.5"
     react-native-builder-bob: "npm:^0.40.18"
+    react-native-gamify-ui: "workspace:*"
     react-native-monorepo-config: "npm:^0.3.3"
     react-native-web: "npm:~0.21.0"
   languageName: unknown
@@ -12701,7 +12702,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-gamify-ui@workspace:.":
+"react-native-gamify-ui@workspace:*, react-native-gamify-ui@workspace:.":
   version: 0.0.0-use.local
   resolution: "react-native-gamify-ui@workspace:."
   dependencies:
