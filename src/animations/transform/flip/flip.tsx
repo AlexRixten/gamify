@@ -140,6 +140,7 @@ export function useFlip(initialFlipped = false) {
 
 const styles = StyleSheet.create({
   container: {
+    // @ts-expect-error perspective is valid in react-native-web but not typed
     perspective: 1000,
   },
   face: {

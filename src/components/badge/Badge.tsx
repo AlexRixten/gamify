@@ -23,7 +23,9 @@ function BadgeBase({
   style,
 }: Omit<BadgeProps, 'flippable' | 'flipped' | 'onFlipEnd' | 'label'>) {
   const sizeConfig = sizes[size];
-  const variantConfig = locked ? variants.locked : variants[variant];
+  const variantConfig = locked
+    ? variants.locked
+    : variants[variant as keyof typeof variants] ?? variants.default;
 
   const bg = backgroundColor ?? variantConfig.bg;
   const border = borderColor ?? variantConfig.border;
@@ -93,8 +95,7 @@ export function Badge({
   onFlipEnd,
   ...props
 }: BadgeProps) {
-  const { locked, emoji, size = 'md' } = props;
-  const sizeConfig = sizes[size];
+  const { locked, emoji } = props;
 
   if (flippable && !locked) {
     const frontEmoji = '❓';

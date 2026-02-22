@@ -1,7 +1,7 @@
 {
-  "name": "gamify",
-  "version": "0.1.0",
-  "description": "Gamification",
+  "name": "react-native-gamify-ui",
+  "version": "1.0.0",
+  "description": "A beautiful gamification UI component library for React Native with animations, achievements, badges, streaks, and more",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
   "exports": {
@@ -15,21 +15,11 @@
   "files": [
     "src",
     "lib",
-    "android",
-    "ios",
-    "cpp",
-    "*.podspec",
-    "react-native.config.js",
-    "!ios/build",
-    "!android/build",
-    "!android/gradle",
-    "!android/gradlew",
-    "!android/gradlew.bat",
-    "!android/local.properties",
+    "!**/__stories__",
+    "!**/*.stories.tsx",
     "!**/__tests__",
     "!**/__fixtures__",
-    "!**/__mocks__",
-    "!**/.*"
+    "!**/__mocks__"
   ],
   "scripts": {
     "example": "yarn workspace gamify-example",
@@ -44,6 +34,16 @@
   },
   "keywords": [
     "react-native",
+    "gamification",
+    "ui-components",
+    "achievements",
+    "badges",
+    "leaderboard",
+    "streaks",
+    "points",
+    "levels",
+    "animations",
+    "reanimated",
     "ios",
     "android"
   ],
@@ -73,6 +73,7 @@
     "@types/jest": "29.5.14",
     "@types/react": "19.1.12",
     "@types/react-dom": "19.2.3",
+    "@types/react-native-vector-icons": "^6.4.18",
     "@types/react-native-web": "0",
     "commitlint": "19.8.1",
     "del-cli": "6.0.0",
@@ -86,6 +87,8 @@
     "react-dom": "19.2.4",
     "react-native": "0.81.5",
     "react-native-builder-bob": "0.40.18",
+    "react-native-reanimated": "^4.2.2",
+    "react-native-vector-icons": "^10.3.0",
     "react-native-web": "0.21.2",
     "release-it": "19.0.4",
     "storybook": "8",
@@ -94,8 +97,10 @@
     "vite": "^7.3.1"
   },
   "peerDependencies": {
-    "react": "*",
-    "react-native": "*"
+    "react": ">=18.0.0",
+    "react-native": ">=0.70.0",
+    "react-native-reanimated": ">=3.0.0",
+    "react-native-vector-icons": ">=9.0.0"
   },
   "workspaces": [
     "example"
@@ -167,11 +172,5 @@
       "eslint"
     ],
     "version": "0.57.2"
-  },
-  "dependencies": {
-    "@types/react-native-vector-icons": "^6.4.18",
-    "react-native-reanimated": "^4.2.2",
-    "react-native-vector-icons": "^10.3.0",
-    "react-native-worklets": "^0.7.4"
   }
 }

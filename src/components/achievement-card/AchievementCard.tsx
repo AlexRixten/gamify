@@ -1,7 +1,7 @@
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { ZoomIn } from '../../animations/entrance';
 import { Icon } from '../icon';
-import type { AchievementCardProps, AchievementStatus } from './types';
+import type { AchievementCardProps } from './types';
 import { defaultConfig, styles } from './styles';
 
 export function AchievementCard({

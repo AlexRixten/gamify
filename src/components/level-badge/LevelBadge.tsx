@@ -7,7 +7,7 @@ import Animated, {
   Easing,
   useDerivedValue,
 } from 'react-native-reanimated';
-import type { LevelBadgeProps, LevelBadgeVariant, LevelBadgeSize } from './types';
+import type { LevelBadgeProps } from './types';
 import { defaultConfig, sizes, variantStyles, styles } from './styles';
 
 export function LevelBadge({
@@ -43,8 +43,6 @@ export function LevelBadge({
     }),
     [glowScale]
   );
-
-  const isDiamond = variant === 'diamond';
 
   const badgeStyle = {
     width: sizeConfig.width,

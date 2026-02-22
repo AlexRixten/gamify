@@ -1,6 +1,5 @@
 import { View, Text, TouchableOpacity } from 'react-native';
 import { Icon } from '../icon';
-import { LevelBadge } from '../level-badge';
 import type { LeaderboardItemProps } from './types';
 import { defaultConfig, styles } from './styles';
 
@@ -60,9 +59,6 @@ export function LeaderboardItem({
     style,
   ];
 
-  const avatarSize = compact ? 32 : 44;
-  const avatarTextSize = compact ? 16 : 24;
-
   const renderRank = () => {
     if (isTopThree) {
       return (
@@ -87,20 +83,19 @@ export function LeaderboardItem({
         {getRankChangeIcon()}
       </View>
 
-      <View
-        style={[
-          styles.avatar,
-          compact && styles.compactAvatar,
-        ]}
-      >
+      <View style={[styles.avatar, compact && styles.compactAvatar]}>
         {avatar ? (
           avatar
         ) : avatarEmoji ? (
-          <Text style={[styles.avatarText, compact && styles.compactAvatarText]}>
+          <Text
+            style={[styles.avatarText, compact && styles.compactAvatarText]}
+          >
             {avatarEmoji}
           </Text>
         ) : (
-          <Text style={[styles.avatarText, compact && styles.compactAvatarText]}>
+          <Text
+            style={[styles.avatarText, compact && styles.compactAvatarText]}
+          >
             👤
           </Text>
         )}
@@ -117,9 +112,7 @@ export function LeaderboardItem({
       </View>
 
       <View style={styles.scoreContainer}>
-        <Text style={styles.score}>
-          {score.toLocaleString()}
-        </Text>
+        <Text style={styles.score}>{score.toLocaleString()}</Text>
         <Text style={styles.scoreLabel}>{scoreLabel}</Text>
       </View>
     </View>

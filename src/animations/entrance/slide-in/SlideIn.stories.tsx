@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { SlideIn, useSlideIn } from './index';
+import { SlideIn } from './index';
 import type { SlideDirection } from './types';
 
 const meta: Meta<typeof SlideIn> = {

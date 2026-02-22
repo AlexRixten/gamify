@@ -46,7 +46,7 @@ const InteractiveProgress = (
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => setValue((v) => Math.min(args.max, v + 10))}
+          onPress={() => setValue((v) => Math.min(args.max ?? 100, v + 10))}
         >
           <Text style={styles.buttonText}>+10</Text>
         </TouchableOpacity>
