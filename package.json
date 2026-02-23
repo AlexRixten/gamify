@@ -1,6 +1,6 @@
 {
   "name": "react-native-gamify-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A beautiful gamification UI component library for React Native with animations, achievements, badges, streaks, and more",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
